@@ -8,7 +8,9 @@ public class StringCalculator {
             for (String number : numbersArray) {
                 if (!number.trim().isEmpty()) {
                     if (Integer.parseInt(number.trim()) >= 0) {
-                        returnValue+=Integer.parseInt(number.trim()); // If it is not a number, parseInt will throw an exception
+                        if (Integer.parseInt(number.trim()) <= 1000) {
+                            returnValue+=Integer.parseInt(number.trim()); // If it is not a number, parseInt will throw an exception
+                        }
                     }
                     else {
                         throw new IllegalArgumentException("Cannot contain negative numbers!");
